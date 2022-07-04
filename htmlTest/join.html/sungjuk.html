@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #score1{
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <form action="sungjukProc.html" method="post" name="sungjukForm">
+       <div align="center" name="div1">
+        <h1>성적처리</h1>
+        이름 : <input type="text" name="name" id="name"> <br>
+        국어 : <input type="text" name="korean" maxlength="3" id="korean"> <br>
+        영어 : <input type="text" name="eng" id="eng" maxlength="3"> <br>
+        수학 : <input type="text" name="math" id="math" maxlength="3"><br>
+        과학 : <input type="text" name="sceince" id="sceince" maxlength="3"><br>
+        역사 : <input type="text" name="history" id="history" maxlength="3"><br>
+        <button type="button" id="bt1" onclick="sum();">성적처리하기</button>
+        <span name="score1" id="score1">총점 : <input type="text" name="sum1" id="sum1" ></span> <br>
+        <span name="score2" id="score2" style="display: none;">평균 : <input type="text" name="avg1" id="avg1" ></span><br>
+   
+    </div>
+    </form>
+
+</body>
+</html>
+<script src="sungjuk.js"></script>

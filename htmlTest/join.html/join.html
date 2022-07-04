@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="join.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">회원가입사이트</div>
+        <div id="aside">회원가입메뉴</div>
+        <div id="main">
+
+            <form action="" name="joinForm" method="post">
+            <table border="1">
+                <tr>
+                    <th>아이디</th>
+                    <td><input type="text" name="id" id="id"  ></td>
+                </tr>
+                <tr>
+                    <th>비밀번호</th>
+                    <td><input type="password" name="passwd" id="passwd" ></td>
+                </tr>
+                <tr>
+                    <th>비밀번호 확인</th>
+                    <td><input type="password" name="passwdChk" id="passwdChk" ></td>
+                </tr>
+                <tr>
+                    <th>이름</th>
+                    <td><input type="text" name="name" id="name" ></td>
+                </tr>
+                <tr>
+                    <th>닉네임</th>
+                    <td><input type="text" name="nickName" id="nickName" ></td>
+                </tr>
+                <tr>
+                    <th>전화번호</th>
+                    <td><input type="tel" name="phone" id="phone" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}"
+                            placeholder="000-0000-0000" ></td>
+                </tr>
+                <tr>
+                    <th>이메일</th>
+                    <td><input type="email" name="email" id="email" ></td>
+                </tr>
+                <tr>
+                    <th>주민번호</th>
+                    <td><input type="text" name="jumin" id="jumin"  maxlength="6"  pattern="[0-9]{6}">-<input type="text" name="" id="jumin"  maxlength="7" pattern="[0-9]{7}"></td>
+                </tr>
+                <tr>
+                    <th>주소</th>
+                    <td><input type="text" name="address" id="address" ></td>
+                </tr>
+                <tr>
+                    <th>추천인아이디</th>
+                    <td><input type="text" name="chuchun" id="chuchun" ></td>
+                </tr>
+                <tr>
+                    <th>가입일자</th>
+                    <td><input type="date" name="" id="sysdate" disabled ></td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="subReset"><button type="button" onclick="join();">가입하기</button>
+            </table>
+        </form>
+        <script>
+            document.getElementById('sysdate').value = new Date().toISOString().substring(0, 10);;
+          </script>
+        </div>
+        <div id="footer">푸푸푸푸푸푸푸푸푸</div>
+    </div>
+</body>
+    
+</html>
+<script src="join.js"></script>
