@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>examMemberJoin</h2>
+
+    <!-- * 입력
+    아이디 :
+    비밀번호 :
+    이름:
+    전화번호
+    이메일
+    주소
+    성별 : 남자, 여자
+    관심분야 : 여행, 독서, 영화감상, 골프, 낚시, 음악감상, 볼링, 음주가무, 코딩 -->
+
+    <form action="" method="post" name="inputForm">
+        <table border="1">
+            <tr>
+                <th>아이디</th>
+                <td><input type="text" name="id" id="id"></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" name="pwd" id="pwd"></td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <th>전화번호</th>
+                <td><input type="tel" name="phone" id="phone" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}"></td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td><input type="email" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td><input type="text" name="address" id="address" style="width: 300px;"></td>
+            </tr>
+            <tr>
+                <th>성별</th>
+                <td>
+                    <input type="radio" name="gender" class="gender" id="gender" value="남성" checked>남성
+                    <input type="radio" name="gender" class="gender" id="gender" value="여성">여성
+                </td>
+            </tr>
+            <tr>
+                <th rowspan="2">관심분야</th>
+                <td width="350px">
+                    <input type="checkbox" name="habit" class="habit" value="여행">여행
+                    <input type="checkbox" name="habit" class="habit" value="독서">독서
+                    <input type="checkbox" name="habit" class="habit" value="영화">영화감상
+                    <input type="checkbox" name="habit" class="habit" value="골프">골프
+                    <input type="checkbox" name="habit" class="habit" value="낚시">낚시 <br>
+                    <input type="checkbox" name="habit" class="habit" value="음악">음악감상
+                    <input type="checkbox" name="habit" class="habit" value="볼링">볼링
+                    <input type="checkbox" name="habit" class="habit" value="음주">음주가무
+                    <input type="checkbox" name="habit" class="habit" value="코딩">코딩
+                </td>
+            </tr>
+        </table>
+        <button type="button" onclick="check();">완료</button>
+    </form>
+
+    <div id="testDiv">
+    <span id="spanId"></span>
+    <span id="spanName"></span>
+    <span id="spanPhone"></span>
+    <span id="spanEmail"></span>
+    <span id="spanAddr"></span>
+    <span id="spanGender"></span>
+    <span id="spanHobby"></span>
+    </div>
+</body>
+
+</html>
+<script>
+    function check() {
+        var habitlist = "";
+        var id = document.getElementById('id');
+        var pwd = document.getElementById('pwd');
+        var name = document.getElementById('name');
+        var phone = document.getElementById('phone');
+        var email = document.getElementById('email');
+        var address = document.getElementById('address');
+        var gender = document.inputForm.gender;
+        var gender1 = document.getElementById('gender').value;
+        var habit = document.inputForm.habit;
+        var td1 = document.getElementById('testDiv');
+        for (i = 0; i < gender.length; i++) {
+            if (gender[i].checked == true) {
+                console.log(gender[i].checked);
+                var genderval = gender[i].value;
+            }
+        }
+        for (i = 0; i < gender.length; i++) {
+            if (habit[i].checked == true) {
+                console.log(habit[i].checked);
+                if (habitlist.length == 0) {
+                    habitlist = habit[i].value;
+                } else {
+                    habitlist += ", " + habit[i].value;
+                }
+            }
+        }
+        td1.innerHTML = '아이디 : <span>' + id.value +
+            '</span><br>이름 <span>: ' + name.value +
+            '</span><br>전화번호 <span>: ' + phone.value +
+            '</span><br>이메일 <span>: ' + email.value +
+            '</span><br>주소 <span>: ' + address.value +
+            '</span><br>성별 <span>: ' + genderval +
+            '</span><br>관심분야 : ' + habitlist + gender1;
+        document.querySelector('span').style.color = 'blue';
+        document.querySelector('span').style.border = '1px solid red';
+        document.inputForm.style.display = 'none';
+    }
+</script>

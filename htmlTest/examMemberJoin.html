@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>examMemberJoin</title>
+</head>
+<body>
+
+    <h2>examMemberJoin</h2>
+
+
+    <table border="1">
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" name="id" id="id"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="password" name="pw" id="pw"></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td><input type="text" name="name" id="name"></td>
+        </tr>
+        <tr>
+            <td>전화번호</td>
+            <td><input type="text" name="phone" id="phone"></td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td><input type="text" name="email" id="email"></td>
+        </tr>
+        <tr>
+            <td>주소</td>
+            <td><input type="text" name="address" id="address"></td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td><input type="radio" name="gender" class="gender" value="male">남자
+                <input type="radio" name="gender" class="gender" value="female">여자</td>
+        </tr>
+        <tr>
+            <td width="80px">관심분야</td>
+            <td><input type="checkbox" name="interest" class="hobby" value="travel">여행
+                <input type="checkbox" name="interest" class="hobby" value="reading">독서
+                <input type="checkbox" name="interest" class="hobby" value="movie">영화감상<br>
+                <input type="checkbox" name="interest" class="hobby" value="golf">골프
+                <input type="checkbox" name="interest" class="hobby" value="fishing">낚시
+                <input type="checkbox" name="interest" class="hobby" value="music">음악감상<br>
+                <input type="checkbox" name="interest" class="hobby" value="bowling">볼링
+                <input type="checkbox" name="interest" class="hobby" value="drinking">음주가무
+                <input type="checkbox" name="interest" class="hobby" value="coding">코딩</td>
+        </tr>
+    </table>
+    <hr><button type="button" id="button" onclick="join();">확인</button>
+
+
+<div id="spanArea" style="display:;">
+아이디 : <span id="spanId"></span><br>
+이름 : <span id="spanName"></span><br>
+전화번호 : <span id="spanPhone"></span><br>
+이메일 : <span id="spanEmail"></span><br>
+주소 : <span id="spanAddr"></span><br>
+성별 : <span id="spanGender"></span><br>
+관심분야 : <span id="spanHobby"></span><br>
+</div>
+</body>
+</html>
+
+<script>
+    var length=document.getElementsByClassName('hobby').length;
+
+    // function join() {
+    //     var id = document.getElementById('id').value;   
+    //     var name = document.getElementById('name').value;
+    //     var phone = document.getElementById('phone').value;
+    //     var email = document.getElementById('email').value;
+    //     var address = document.getElementById('address').value;
+    //     var gender = "";
+
+    //     var i = 0; //인덱스
+    //     while(i < length) {
+            
+    //     }
+
+    //     var msg="";
+    //     msg += id;
+    //     msg += ",";
+    //     msg += name;
+    //     msg += ",";
+    //     msg += phone;
+    //     msg += ",";
+    //     msg += email;
+    //     msg += ",";
+    //     msg += address;
+    //     msg += ",";
+    //     msg += gender;
+
+    //     alert(msg);
+    // }
+
+
+    function join() {
+        
+        var id = document.getElementById('id').value;
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var email = document.getElementById('email').value;
+        var address = document.getElementById('address').value;
+        var hobby = new Array();
+
+        for(var i = 0 ; i < length; i ++){
+            if(document.getElementsByClassName('hobby')[i].checked==true){
+                hobby.push(document.getElementsByClassName('hobby')[i].value);
+                console.log(document.getElementsByClassName('hobby')[i].value);
+            }
+        }
+        
+        
+        var s="";
+        var gender = document.getElementsByClassName('gender');
+        if(gender[0].checked==true){
+            s = gender[0].value;
+        }else{
+            s = gender[1].value;
+        }
+        document.write("<h2>examMemberJoin</h2>");
+        document.write('아이디: '+ id+"<br>");
+        document.write('이름: '+ name+"<br>");
+        document.write('전화번호: '+phone+"<br>");
+        document.write('이메일: '+email+"<br>");
+        document.write('주소: '+ address+"<br>");
+        document.write('성별: '+ s+"<br>");
+        document.write('관심분야: '+hobby);
+    }
+</script>

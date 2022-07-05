@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>examWhile</h2>
+<form action="" method="post" name="dirForm">
+    <table border="1">
+        <tr>
+            <td width="100px">항목1</td>
+            <td width="200px"><input type="text" name="box_1" class="box"></td>
+        </tr>
+        <tr>
+            <td width="100px">항목2</td>
+            <td><input type="text" name="box_2" class="box"></td>
+        </tr>
+        <tr>
+            <td width="100px">항목3</td>
+            <td><input type="text" name="box_3" class="box"></td>
+        </tr>
+        <tr>
+            <td width="100px">항목4</td>
+            <td><input type="text" name="box_4" class="box"></td>
+        </tr>
+        <tr>
+            <td width="100px">항목5</td>
+            <td><input type="text" name="box_5" class="box"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="button" onclick="imsi();">확인</button>
+            </td>
+        </tr>
+    </table>
+</form> <!-- form 이 없으면 name으로 자바스크립트 호출 불가능 -->
+</body>
+</html>
+<script>
+function imsi(){
+    var formCounter = 0;
+    while(formCounter <5){
+         var imsi = document.querySelectorAll('.box');
+         imsi[formCounter].value = Number(imsi[formCounter].value)+1;
+        formCounter++;
+    }
+}
+
+</script>

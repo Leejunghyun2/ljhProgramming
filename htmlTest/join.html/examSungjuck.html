@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{width: 30px;}
+    </style>
+</head>
+<body>
+    <h2>examSungjuk</h2>
+
+
+    <!-- 입력 : 학생 5명의 이름, 국어, 영어, 수학 , 과학, 역사
+    출력 :
+
+    전체 총점 :
+    전체 평균 : -->
+    <form action="" method="post" name="scoreForm">
+    <table border="1">
+        <tr> 
+            <th></th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수어</th>
+            <th>과학</th>
+            <th>역사</th>
+        </tr>
+        <tr>
+            <th>학생1</th>
+            <td><input type="text" name="kor" id="" class="kor allScore"></td>
+            <td><input type="text" name="eng" id="" class="eng allScore"></td>
+            <td><input type="text" name="math" id="" class="math allScore"></td>
+            <td><input type="text" name="sce" id="" class="sce allScore"></td>
+            <td><input type="text" name="his" id="" class="his allScore"></td>
+        </tr>
+        <tr>
+            <th>학생2</th>
+            <td><input type="text" name="kor" id="" class="kor allScore"></td>
+            <td><input type="text" name="eng" id="" class="eng allScore"></td>
+            <td><input type="text" name="math" id="" class="math allScore"></td>
+            <td><input type="text" name="sce" id="" class="sce allScore"></td>
+            <td><input type="text" name="his" id="" class="his allScore"></td>
+        </tr>
+        <tr>
+            <th>학생3</th>
+            <td><input type="text" name="kor" id="" class="kor allScore"></td>
+            <td><input type="text" name="eng" id="" class="eng allScore"></td>
+            <td><input type="text" name="math" id="" class="math allScore"></td>
+            <td><input type="text" name="sce" id="" class="sce allScore"></td>
+            <td><input type="text" name="his" id="" class="his allScore"></td>
+        </tr>
+        <tr>
+            <th>학생4</th>
+            <td><input type="text" name="kor" id="" class="kor allScore"></td>
+            <td><input type="text" name="eng" id="" class="eng allScore"></td>
+            <td><input type="text" name="math" id="" class="math allScore"></td>
+            <td><input type="text" name="sce" id="" class="sce allScore"></td>
+            <td><input type="text" name="his" id="" class="his allScore"></td>
+        </tr>
+        <tr>
+            <th>학생5</th>
+            <td><input type="text" name="kor" id="" class="kor allScore"></td>
+            <td><input type="text" name="eng" id="" class="eng allScore"></td>
+            <td><input type="text" name="math" id="" class="math allScore"></td>
+            <td><input type="text" name="sce" id="" class="sce allScore"></td>
+            <td><input type="text" name="his" id="" class="his allScore"></td>
+        </tr>
+        <tr>
+            <th>총점</th>
+            <td><input type="text" name="kor" id="" class="korsc"></td>
+            <td><input type="text" name="eng" id="" class="engsc"></td>
+            <td><input type="text" name="math" id="" class="mathsc"></td>
+            <td><input type="text" name="sce" id="" class="scesc"></td>
+            <td><input type="text" name="his" id="" class="hissc"></td>
+        </tr>
+        <tr>
+            <th>평균</th>
+            <td><input type="text" name="kor" id="" class="korav"></td>
+            <td><input type="text" name="eng" id="" class="engav"></td>
+            <td><input type="text" name="math" id="" class="mathav"></td>
+            <td><input type="text" name="sce" id="" class="sceav"></td>
+            <td><input type="text" name="his" id="" class="hisav"></td>
+        </tr>
+    </table><hr>
+        <input type="text" name="sumScore" id="sumScore" style="width: 100px;"> <input type="text" name="sumAvg" id="sumAvg" style="width: 100px;">
+        <button type="button" onclick="result();">확인</button>
+    </form>
+
+</body>
+</html>
+<script>
+    function result(){
+    var korScore = document.querySelectorAll('.kor');
+    var engScore = document.querySelectorAll('.eng');
+    var mathScore = document.querySelectorAll('.math');
+    var sceScore = document.querySelectorAll('.sce');
+    var hisScore = document.querySelectorAll('.his');
+    var allScore1 = document.querySelectorAll('.allScore');
+    var allSum = 0;
+    var korsum = 0;
+    var engsum = 0;
+    var mathsum = 0;
+    var scesum = 0;
+    var hissum = 0;
+    for(j=0;j<allScore1.length;j++){
+        allSum += Number(allScore1[j].value);
+    }
+    document.scoreForm.sumScore.value = allSum;
+    document.scoreForm.sumAvg.value = allSum/25;
+    for(i=0;i<4;i++){
+    korsum += Number(korScore[i].value);
+    engsum += Number(engScore[i].value);
+    mathsum += Number(mathScore[i].value);
+    scesum += Number(sceScore[i].value);
+    hissum += Number(hisScore[i].value);
+   }
+    document.querySelector('.korsc').value = korsum;
+    document.querySelector('.engsc').value = engsum;
+    document.querySelector('.mathsc').value = mathsum;
+    document.querySelector('.scesc').value = scesum;
+    document.querySelector('.hissc').value = hissum;
+    document.querySelector('.korav').value = korsum/5;
+    document.querySelector('.engav').value = engsum/5;
+    document.querySelector('.mathav').value = mathsum/5;
+    document.querySelector('.sceav').value = scesum/5;
+    document.querySelector('.hisav').value = hissum/5;
+}
+</script>
