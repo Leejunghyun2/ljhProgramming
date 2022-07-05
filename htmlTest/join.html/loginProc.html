@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>loginProc.html</h2>
-    <form  method="post" name="loginProcForm">
+    <form name="loginProcForm">
     <input type="hidden" name="name" value="홍길동">
     </form>
 </body>
@@ -16,11 +16,9 @@
 <script>
     // location.href = 'loginResult.html'; 단순한페이지이동;
     function move(){
-        console.log(id);
-        document.loginProcForm.action = 'loginResult.html';
+        document.loginProcForm.action = "loginResult.html";
         document.loginProcForm.method = "post";
         document.loginProcForm.submit(); 
     }
-
     move();
 </script>
