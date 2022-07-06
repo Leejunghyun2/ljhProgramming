@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+<h2>examTextarea</h2>
+
+<div id="divArea"></div>
+
+<hr>
+
+<textarea name="content" id="content" style="width: 300p; height: 200px;"></textarea>
+
+<button name="button" onClick="aaa();">확인</button>
+
+</body>
+</html>
+
+<script>
+    function aaa() {
+        var memo = document.getElementById("divArea").innerHTML;
+        var content = document.getElementById("content").value;
+        var imsi = memo + " " + content;
+
+        document.getElementById("divArea").innerHTML = imsi;
+    }
+    </script>
+253 + 576

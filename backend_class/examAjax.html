@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    
+<h2>로그인</h2>
+
+<table border="1">
+    <tr>
+        <td>아이디 : </td>
+        <td><input type="text" name="id" id="id"></td>
+    </tr>
+    <tr>
+        <td>비밀번호 : </td>
+        <td><input type="password" name="passwd" id="passwd"></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" id="btnLogin">로그인</button>
+            <button type="button" id="btnNaver">네이버</button>
+            <button type="button" id="btnDaum">다음</button>
+            <button type="button" id="btnZum">Zum</button>
+        </td>
+    </tr>
+</table>
+
+<hr>
+<div id="moveUrl" style="border: 1px solid blue; display: none;"></div>
+
+<div id="result"></div>
+
+</body>
+</html>
+
+<script>
+$(function(){
+    $("#btnLogin").click(function(){
+        var id = document.getElementById("id").value;
+        var passwd = document.getElementById("passwd").value;
+        param = {"id":id,"passwd":passwd}
+        $.ajax({ //비동기식 호출, 실행..
+            type: "post",
+            data: param,
+            url: "examAjaxProc.html",
+            success: function(result) {
+                $("#result").html(result);
+            }
+        });
+    });
+
+    $("#btnNaver").click(function(){
+        document.getElementById("moveUrl").innerHTML = "<font style='color: red; font-weight: bold;'>https://www.naver.com</font>";
+        move();
+    });
+    $("#btnDaum").click(function(){
+        document.getElementById("moveUrl").innerHTML = "<strong>https://www.daum.net</strong>";
+        move();
+    });
+    $("#btnZum").click(function(){
+        document.getElementById("moveUrl").innerHTML = "<b>https://www.zum.com</b>";
+        move();
+    });
+});
+
+function move() {
+    var value1 = document.getElementById("moveUrl").innerHTML;
+    //alert("value1 : " + value1);
+    location.href = value1;
+}
+</script>

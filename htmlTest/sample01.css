@@ -1,0 +1,15 @@
+header{
+    background-color: rgb(116,192,127);
+}
+header > ul > li{
+    list-style: none;
+}
+aside{
+    background-color: rgb(63,165,79);
+}
+main{
+    background-color: rgb(55,149,70);
+}
+footer{
+    background-color: rgb(45,130,59);
+}

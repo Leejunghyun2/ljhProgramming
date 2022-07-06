@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+ 
+<h2>loginProc.html</h2>
+
+<form name="loginProcForm">
+<input type="text" name="name" value="홍길동"><br>
+</form>
+
+</body>
+</html>
+
+<script>
+    function move() {
+        document.loginProcForm.action = "loginResult.html";
+        document.loginProcForm.method = "post";
+        document.loginProcForm.submit();
+
+        //location.href = 'loginResult.html';
+    }
+
+    move();
+</script>

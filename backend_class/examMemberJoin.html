@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+<h2>examMemberJoin</h2>
+
+<div id="inputArea">
+아이디 : <input type="text" name="id" id="id"><br>
+비밀번호 : <input type="password" name="passwd" id="passwd"><br>
+이름 : <input type="text" name="name" id="name"><br>
+전화번호 : <input type="text" name="phone" id="phone"><br>
+이메일 : <input type="text" name="email" id="email"><br>
+주소 : <input type="text" name="addr" id="addr"><br>
+성별 : 
+<input type="radio" name="gender" class="gender" value="남자" checked> 남자 &nbsp;&nbsp;
+<input type="radio" name="gender" class="gender" value="여자"> 여자<br>
+관심분야 : <br>
+<input type="checkbox" class="hobby" value="여행"> 여행 &nbsp;&nbsp;
+<input type="checkbox" class="hobby" value="독서"> 독서 &nbsp;&nbsp;
+<input type="checkbox" class="hobby" value="영화감상"> 영화감상<br>
+<input type="checkbox" class="hobby" value="골프"> 골프 &nbsp;&nbsp;
+<input type="checkbox" class="hobby" value="낚시"> 낚시 &nbsp;&nbsp;
+<input type="checkbox" class="hobby" value="음악감상"> 음악감상<br>
+<input type="checkbox" class="hobby" value="볼링"> 볼링 &nbsp;&nbsp;
+<input type="checkbox" class="hobby" value="음주가무"> 음주가무 &nbsp;&nbsp;
+<input type="checkbox" class="hobby" value="코딩"> 코딩<br>
+
+<hr>
+<button type="button" onClick="imsi();">확인</button>
+</div>
+
+<hr>
+
+<div id="spanArea" style="display: none;">
+아이디 : <span id="spanId"></span><br>
+이름 : <span id="spanName"></span><br>
+전화번호 : <span id="spanPhone"></span><br>
+이메일 : <span id="spanEmail"></span><br>
+주소 : <span id="spanAddr"></span><br>
+성별 : <span id="spanGender"></span><br>
+관심분야 : <span id="spanHobby"></span><br>
+</div>
+
+</body>
+</html>
+
+<script>
+    function imsi() {
+        var id = document.getElementById("id").value;
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phone").value;
+        var email = document.getElementById("email").value;
+        var addr = document.getElementById("addr").value;
+
+        var gender = "여자";
+        if (document.getElementsByClassName("gender")[0].checked == true) { //남자를 선택했으면..
+            gender = "남자";
+        }
+
+        var strHobby = "";
+        var hobbyCounter = document.getElementsByClassName("hobby").length;
+        var i = 0;
+        while (i < hobbyCounter) {
+            if (document.getElementsByClassName("hobby")[i].checked == true) { //선택했으면..
+                var imsi = document.getElementsByClassName("hobby")[i].value;
+                strHobby += "," + imsi;
+            }
+            i++;
+        }
+        strHobby = strHobby.substr(1);
+
+        document.getElementById("spanId").innerHTML = id;
+        document.getElementById("spanName").innerHTML = name;
+        document.getElementById("spanPhone").innerHTML = phone;
+        document.getElementById("spanEmail").innerHTML = email;
+        document.getElementById("spanAddr").innerHTML = addr;
+        document.getElementById("spanGender").innerHTML = gender;
+        document.getElementById("spanHobby").innerHTML = strHobby;
+
+        document.getElementById("inputArea").style.display = "none";
+        document.getElementById("spanArea").style.display = "";
+    }
+</script>

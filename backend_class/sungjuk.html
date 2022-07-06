@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form name="sungjukForm" method="post" action="sungjukProc.html">
+    <table border="0" align="center">
+        <tr>
+            <td width="200px" colspan="10"><h2>성적처리</h2></td>  
+        </tr>   
+        <tr>          
+            <td width="100px">이름 : </td>
+            <td><input type="text" name="name" id="name"></td>
+        </tr>
+        <tr>          
+            <td width="100px">국어점수 : </td>
+            <td><input type="text" name="kor" id="kor"></td>
+        </tr>
+        <tr>          
+            <td width="100px">영어점수 : </td>
+            <td><input type="text" name="eng" id="eng"></td>
+        </tr>    
+        <tr>          
+            <td width="100px">수학점수 : </td>
+            <td><input type="text" name="mat" id="mat"></td>
+        </tr>
+        <tr>          
+            <td width="100px">과학점수 : </td>
+            <td><input type="text" name="sci" id="sci"></td>
+        </tr>    
+        <tr>          
+            <td width="100px">역사점수 : </td>
+            <td><input type="text" name="his" id="his"></td>
+        </tr>
+        <tr id="trBtn">          
+            <td colspan="10">
+                <button type="button" onClick="sungjukProc();">성적처리하기</button>    
+            </td>
+        </tr>  
+        <tr id="trTot" style="display: none;">          
+            <td width="100px">총점 : </td>
+            <td><input type="text" name="tot" id="tot"></td>
+        </tr>  
+        <tr id="trAvg" style="display: none;">          
+            <td width="100px">평균 : </td>
+            <td><input type="text" name="avg" id="avg"></td>
+        </tr>
+    </table>
+    </form>
+
+
+</body>
+</html>
+
+<script>
+    function sungjukProc() {
+        var f = document.sungjukForm;
+        var name = f.name.value;
+        var kor = f.kor.value;
+        var eng = f.eng.value;
+        var mat = f.mat.value;
+        var sci = f.sci.value;
+        var his = f.his.value;
+
+        kor = parseInt(kor);
+        eng = parseInt(eng);
+        mat = parseInt(mat);
+        sci = parseInt(sci);
+        his = parseInt(his);
+
+        var tot = kor + eng + mat + sci + his;
+        var avg = tot / 5;
+
+        //alert(name + "님의 5과목 평균은 " + avg + "점입니다.");
+
+        f.tot.value = tot;
+        f.avg.value = avg;
+
+        document.getElementById("trTot").style.display = "";
+        document.getElementById("trAvg").style.display = "";
+
+        document.getElementById("trBtn").style.display = "none";
+
+        f.submit();
+    }
+</script>

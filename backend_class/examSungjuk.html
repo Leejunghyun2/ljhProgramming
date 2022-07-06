@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+ 
+<h2>examSungjuk</h2>
+
+<table border="1">
+    <tr>
+        <td width="80px">이름</td>
+        <td width="200px"><input type="text" class="name"></td>
+    </tr>
+    <tr>
+        <td width="100px">국어</td>
+        <td><input type="text" class="kor"></td>
+    </tr>
+    <tr>
+        <td width="100px">영어</td>
+        <td><input type="text" class="eng"></td>
+    </tr>
+    <tr>
+        <td width="100px">수학</td>
+        <td><input type="text" class="mat"></td>
+    </tr>
+    <tr>
+        <td width="100px">과학</td>
+        <td><input type="text" class="sci"></td>
+    </tr> 
+    <tr>
+        <td width="100px">역사</td>
+        <td><input type="text" class="his"></td>
+    </tr>    
+</table>
+<hr>
+<table border="1">
+    <tr>
+        <td width="80px">이름</td>
+        <td width="200px"><input type="text" class="name"></td>
+    </tr>
+    <tr>
+        <td width="100px">국어</td>
+        <td><input type="text" class="kor"></td>
+    </tr>
+    <tr>
+        <td width="100px">영어</td>
+        <td><input type="text" class="eng"></td>
+    </tr>
+    <tr>
+        <td width="100px">수학</td>
+        <td><input type="text" class="mat"></td>
+    </tr>
+    <tr>
+        <td width="100px">과학</td>
+        <td><input type="text" class="sci"></td>
+    </tr> 
+    <tr>
+        <td width="100px">역사</td>
+        <td><input type="text" class="his"></td>
+    </tr>    
+</table>
+<hr>
+<table border="1">
+    <tr>
+        <td width="80px">이름</td>
+        <td width="200px"><input type="text" class="name"></td>
+    </tr>
+    <tr>
+        <td width="100px">국어</td>
+        <td><input type="text" class="kor"></td>
+    </tr>
+    <tr>
+        <td width="100px">영어</td>
+        <td><input type="text" class="eng"></td>
+    </tr>
+    <tr>
+        <td width="100px">수학</td>
+        <td><input type="text" class="mat"></td>
+    </tr>
+    <tr>
+        <td width="100px">과학</td>
+        <td><input type="text" class="sci"></td>
+    </tr> 
+    <tr>
+        <td width="100px">역사</td>
+        <td><input type="text" class="his"></td>
+    </tr>    
+</table>
+<hr>
+<table border="1">
+    <tr>
+        <td width="80px">이름</td>
+        <td width="200px"><input type="text" class="name"></td>
+    </tr>
+    <tr>
+        <td width="100px">국어</td>
+        <td><input type="text" class="kor"></td>
+    </tr>
+    <tr>
+        <td width="100px">영어</td>
+        <td><input type="text" class="eng"></td>
+    </tr>
+    <tr>
+        <td width="100px">수학</td>
+        <td><input type="text" class="mat"></td>
+    </tr>
+    <tr>
+        <td width="100px">과학</td>
+        <td><input type="text" class="sci"></td>
+    </tr> 
+    <tr>
+        <td width="100px">역사</td>
+        <td><input type="text" class="his"></td>
+    </tr>    
+</table>
+<hr>
+<button type="button" onClick="imsi();">확인</button>
+
+<p id="viewArea" style="display: none;">
+전체 총점 : <input type="text" id="totPoint"><br>
+전체 평균 : <input type="text" id="avgPoint"><br>
+</p>
+
+<hr>
+연령대 : 
+<input type="checkbox" class="age" value="10대"> 10대 &nbsp;&nbsp;
+<input type="checkbox" class="age" value="20대"> 20대 &nbsp;&nbsp;
+<input type="checkbox" class="age" value="30대"> 30대 &nbsp;&nbsp;
+
+<hr>
+<span id="testDiv" style="border: 1px solid red;"></span>
+<input type="text" id="aaa">
+
+</body>
+</html>
+
+<script>
+    function imsi() {
+        var imsi = "";
+
+        if (document.getElementsByClassName("age")[0].checked == true) {
+            //alert("0번째 선택함 : " + document.getElementsByClassName("age")[0].value);
+            imsi = document.getElementsByClassName("age")[0].value
+        } else {
+            //alert("0번째 선택안함");
+        }
+
+        if (document.getElementsByClassName("age")[1].checked == true) {
+            //alert("1번째 선택함 : " + document.getElementsByClassName("age")[1].value);
+        } else {
+            //alert("1번째 선택안함");
+        }
+
+        if (document.getElementsByClassName("age")[2].checked == true) {
+            //alert("2번째 선택함 : " + document.getElementsByClassName("age")[2].value);
+        } else {
+            //alert("2번째 선택안함");
+        }
+
+        document.getElementById("testDiv").innerHTML = "<font style='color: red;'>" + imsi + "</font>";
+        document.getElementById("aaa").value = imsi;
+        var asd = document.getElementById("testDiv").innerText;
+        alert("asd : --> " + asd);
+
+        // var tot = 0;
+        // var avg = 0;
+
+        // var studentCounter = document.getElementsByClassName("name").length;
+        // var i = 0;
+        // while (i < studentCounter) {
+        //     imsi01 = parseInt(document.getElementsByClassName("kor")[i].value);
+        //     imsi02 = parseInt(document.getElementsByClassName("eng")[i].value);
+        //     imsi03 = parseInt(document.getElementsByClassName("mat")[i].value);
+        //     imsi04 = parseInt(document.getElementsByClassName("sci")[i].value);
+        //     imsi05 = parseInt(document.getElementsByClassName("his")[i].value);
+        //     imsi06 = imsi01 + imsi02 + imsi03 + imsi04 + imsi05;
+        //     tot += imsi06;
+        //     i++;
+        // }
+        // var korSu = document.getElementsByClassName("kor").length;
+        // var engSu = document.getElementsByClassName("eng").length;
+        // var matSu = document.getElementsByClassName("mat").length;
+        // var sciSu = document.getElementsByClassName("sci").length;
+        // var hisSu = document.getElementsByClassName("his").length;
+        // var su = korSu + engSu + matSu + sciSu + hisSu;
+        // avg = tot / su;  
+
+        // document.getElementById("totPoint").value = tot;
+        // document.getElementById("avgPoint").value = avg;
+        // document.getElementById("viewArea").style.display = "";
+    }
+    </script>

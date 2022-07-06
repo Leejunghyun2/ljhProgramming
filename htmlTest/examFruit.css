@@ -1,0 +1,70 @@
+img{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+}
+#container{
+    height: 100vh;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: "header header"
+                         "menu main"
+                         "footer footer";
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-columns: 300px 1fr;
+                    
+
+}
+#menu{
+    background-color: antiquewhite;
+    grid-area: menu;
+}
+.fruitBox{
+    position: relative;
+    border: 1px solid lightgray;
+    height: 500px;
+    width: 300px;
+}
+.fruitBox > #price{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#kind{
+    height: 500px;
+    width: 300px;
+    position: relative;
+    
+}
+#kind > .goods{
+    background-color: white;
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 300px;
+    width: 500px;
+    z-index: 1;
+    
+}
+td > img{
+    margin:0px;
+}
+#main{
+    overflow-y: scroll;
+    text-align: left;
+    display: grid;
+    grid-gap: 10px 50px;
+    grid-area: main;
+    grid-template-columns: repeat(3,300px);
+}
+#header{
+    background-color: antiquewhite;
+    grid-area: header;
+}
+#footer{
+    background-color: antiquewhite;
+    grid-area: footer;
+}
